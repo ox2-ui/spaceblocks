@@ -6,3 +6,7 @@ Handlebars.registerHelper('blockType', function (type) {
     return Template._blocksType2;
   }
 });
+
+Handlebars.registerHelper("mdConvert", function (r,o) {
+    return marked(r);
+  });
