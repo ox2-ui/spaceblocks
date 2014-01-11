@@ -11,7 +11,11 @@
       <div class="card-header">
         <div class="card-info">
         {{#if editing}} 
+
           <h3 class="title {{type}}"> <span class="icon {{type}}"></span><input type="text" class="form-control  focus-{{_id}} js-cardName" value="{{cardName}}"></h3>
+
+          <button class="delete-card btn btn-default btn-mini sparkicon sparkicon-trash js-deleteCard"></button>
+
         {{else}}
           <h3 class="title {{type}} js-editCardTitle"> <span class="icon {{type}}"></span> {{cardName}}</h3>
         {{/if}}
@@ -28,6 +32,5 @@
           {{> blocksI}}
         {{/each}}
       </div>
-      <button class="delete-card btn btn-default btn-mini sparkicon sparkicon-trash js-deleteCard"></button>
   </div>
 </template>
