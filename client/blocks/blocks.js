@@ -43,5 +43,19 @@ Template._blocksType2.helpers({
 Template._blocksType2.events({
   'click .js-removeBlockType2': function () {
     
+  },
+  'click .js-addBlockTo': function () {
+    if (Session.get('selected_block')) {
+      Blocks.update({'_id': this._id}, {$addToSet: {connections : Session.get('selected_block')}});
+      Blocks.update({'_id': Session.get('selected_block')}, {$addToSet: {connections : this._id}});
+    }
+  },
+  'click .js-addComment': function () {
+    var newComment = Comments.insert({
+      createdAt: new Date(),
+      boardId: Session.get("selected_card"),
+      content: ''
+    });
+    Blocks.update({'_id': this._id}, {$addToSet: {comments : newComment}})
   }
 });
