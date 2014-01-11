@@ -2,6 +2,9 @@ Template.blocksI.helpers({
   linked: function () {
     return _.contains(this.connections, Session.get("selected_block")) ? 'linked': '';
   },
+  editing: function () {
+    return Session.equals('edit_block', this._id);
+  },
 });
 
 Template.blocksI.events({
@@ -14,7 +17,7 @@ Template.blocksI.events({
     Blocks.remove({'_id': this._id})
   },
   'click .js-addBlockTo': function () {
-    if (Session.get('selected_block')) {
+    if (Session.get('selected_block') && !Session.equals('selected_block', this._id)) {
       Blocks.update({'_id': this._id}, {$addToSet: {connections : Session.get('selected_block')}});
       Blocks.update({'_id': Session.get('selected_block')}, {$addToSet: {connections : this._id}});
     }
@@ -46,13 +49,21 @@ Template.blocksI.events({
                   Blocks.update({'_id': this._id}, { $set: { content: e.currentTarget.value }});
                   Session.set('edit_block', '');
               }
-          },
+  },
+  'click .js-saveBlock': function (e, t) {
+    var el = t.find('.focus-' + this._id);
+    Blocks.update({'_id': this._id}, {$set: {content: el.value}});
+    Session.set('edit_block', '');
+  },
+  'click .js-cancelBlock': function () {
+    Session.set('edit_block', '');
+  }
 })
 
 Template._blocksType1.helpers({
-  editing: function () {
-    return Session.equals('edit_block', this._id);
-  },
+  // editing: function () {
+  //   return Session.equals('edit_block', this._id);
+  // },
   // linked: function () {
   //   return _.contains(this.connections, Session.get("selected_block")) ? 'linked': '';
   // },

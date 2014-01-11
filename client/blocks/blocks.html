@@ -2,17 +2,20 @@
 <div class="{{selectedBlock}}">
   {{#blockType type}}
   {{/blockType}}
-  {{#if linked}}
-    <button class="btn btn-default js-removeBlockTo sparkicon sparkicon-minus"></button>
+  {{#if editing}}
+    <button class="btn btn-success sparkicon sparkicon-checkmark js-saveBlock"></button> 
+    <button class="btn btn-danger sparkicon sparkicon-close2 js-cancelBlock"></button> 
   {{else}}
-    <button class="btn btn-default js-addBlockTo sparkicon sparkicon-plus"></button>
+    {{#if linked}}
+      <button class="btn btn-default js-removeBlockTo sparkicon sparkicon-minus"></button>
+    {{else}}
+      <button class="btn btn-default js-addBlockTo sparkicon sparkicon-plus"></button>
+    {{/if}}
+    <button class="btn btn-default sparkicon sparkicon-pencil js-editBlock"></button> 
+    <button class="btn btn-default js-removeBlockType sparkicon sparkicon-trash"></button>
+    <button class="btn btn-default js-addComment sparkicon-chat-bubbles"></button>
   {{/if}}
-  <button class="btn btn-default sparkicon sparkicon-pencil js-editBlock"></button> 
-  <button class="btn btn-success sparkicon sparkicon-checkmark js-editBlock"></button> 
-  <button class="btn btn-danger sparkicon sparkicon-close2"></button> 
-  <button class="btn btn-default js-removeBlockType sparkicon sparkicon-trash"></button>
-  <button class="btn btn-default js-addComment sparkicon-chat-bubbles"></button>
-</div>
+  </div>
 </template>
 
 <template name="_blocksType1">
