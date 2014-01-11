@@ -46,13 +46,24 @@ Template.blocksI.events({
 Template._blocksType1.helpers({
   editing: function () {
     return Session.equals('edit_block', this._id);
+  },
+  linked: function () {
+    return _.contains(this.connections, Session.get("selected_block")) ? 'linked': '';
+  },
+  selected: function () {
+    return Session.equals('selected_block', this._id) ? "selected" : '';
   }
 });
 
 Template._blocksType2.helpers({
   editing: function () {
-    console.log('editing')
     return Session.equals('edit_block', this._id);
+  },
+  linked: function () {
+    return _.contains(this.connections, Session.get("selected_block")) ? 'linked': '';
+  },
+  selected: function () {
+    return Session.equals('selected_block', this._id) ? "selected" : '';
   }
 });
 

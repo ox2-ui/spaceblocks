@@ -14,7 +14,7 @@
       {{#if editing}} 
         <input type="text" class="form-control  focus-{{_id}}" value="{{content}}">
       {{else}}
-        <h4 class="content XXXselected">{{content}}</h4>
+        <h4 class="content {{linked}} {{selected}}">{{content}}</h4>
       {{/if}}
   </div>
 </template>
@@ -24,7 +24,7 @@
     {{#if editing}} 
       <input type="textarea" rows=3 class="form-control  focus-{{_id}}" value="{{content}}">
     {{else}}
-      <div class="content">{{{mdConvert  content}}}</div>
+      <div class="content {{linked}} {{selected}}">{{{mdConvert  content}}}</div>
     {{/if}}
   </div>
 </template>
