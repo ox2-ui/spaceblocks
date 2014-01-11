@@ -12,6 +12,9 @@ Template.cardsI.helpers({
   blocks: function () {
     // return Blocks.find({'boardId': {$in: [this._id]}}, {sort: {createdAt: -1}});
     return Blocks.find({'boardId': this._id}, {sort: {createdAt: 1}});
+  },
+  editing: function () {
+    return Session.equals('edit_card', this._id);
   }
 })
 
@@ -60,5 +63,19 @@ Template.cardsI.events({
     var blocks = Blocks.find({'boardId': this._id}, {fields: {id: 1}}).fetch();
     var blockList = _.pluck(blocks, '_id')
     Session.set("selected_block", blockList)
+  },
+  'dblclick .js-editCardTitle': function () {
+    Session.set('edit_card', this._id)
+    var selector = ".focus-" + this._id;
+    Meteor.setTimeout(function () {
+      var inputs = document.querySelector(selector);
+      inputs.focus();
+    }, 100)
+  },
+  'keypress .js-cardName': function (e, t) {
+              if (e.keyCode === 13) {
+                  Cards.update({'_id': this._id}, { $set: { cardName: e.currentTarget.value }});
+                  Session.set('edit_card', '');
+              }
   }
 })

@@ -73,7 +73,7 @@ UI.body.events({
 
 Template.controls.events({
   'click #insertCard' : function (e) {
-    console.log('%c e click   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
+    // console.log('%c e click   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
      Cards.insert({
        createdAt: new Date(),
        cardName: "Test " + Random.id() ,

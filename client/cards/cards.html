@@ -10,7 +10,14 @@
     <div class="card js-selectCard" draggable="true" style="left: {{left}}; top: {{top}}; z-index: {{zIndex}};">
       <div class="card-header">
         <div class="card-info">
-          <h3 class="title schema"> <span class="icon schema"></span> Agenda</h3>
+        {{#if editing}} 
+          <h3 class="title schema"> <span class="icon schema"></span><input type="text" class="form-control  focus-{{_id}} js-cardName" value="{{cardName}}"></h3>>
+        {{else}}
+          <h3 class="title schema js-editCardTitle"> <span class="icon schema"></span> {{cardName}}</h3>>
+        {{/if}}
+          
+        
+
         </div>
         <div class="control">
           <button type="button" class="btn btn-default js-newBlockText sparkicon sparkicon-insert-item"></button>
