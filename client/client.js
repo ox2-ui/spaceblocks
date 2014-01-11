@@ -86,6 +86,9 @@ Template.controls.events({
         console.log(err);
       }
     });
+  },
+  'click #deleteRecords': function () {
+    Meteor.call('deleteRecords')
   }
 });
 

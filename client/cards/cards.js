@@ -17,7 +17,7 @@ Template.cardsI.helpers({
 
 Template.cardsI.events({
   'click .js-newBlockText': function () {
-    Blocks.insert({
+    var newBlock = Blocks.insert({
       createdAt: new Date(),
       connections: [],
       type: 2,
@@ -26,6 +26,7 @@ Template.cardsI.events({
       boardId: [this._id],
       icon: ''
     })
+    Session.set('edit_block', newBlock)
   },
   'keypress .js-newBlockInput' : function (e, t) {
     var curLenght = e.currentTarget.value.length;

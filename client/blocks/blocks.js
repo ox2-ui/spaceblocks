@@ -8,7 +8,7 @@ Template.blocksI.events({
   'click .js-selectBlock': function () {
     Session.set("selected_block", this._id)
   },
-  'click .js-removeBlockType1': function () {
+  'click .js-removeBlockType': function () {
 
     Meteor.call('removeBlock', this._id)
     Blocks.remove({'_id': this._id})
