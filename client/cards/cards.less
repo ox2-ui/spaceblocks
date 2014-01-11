@@ -1,0 +1,68 @@
+@import "../variables.lessimport";
+
+.card {
+  position: absolute;
+  background-color: @item-background;
+  color:white;
+
+  .block-list {
+    padding: 1em;
+  }
+}
+
+.card-header {
+  margin-bottom: 1em;
+  color: white;
+
+  .block-input {
+    margin-top: .3em;
+  }
+
+
+  .control {
+    padding: .3em 1em;
+    text-align: center;
+  }
+
+  .card-info {
+
+    .title {
+      color: white;
+      padding: .3em .5em;
+      margin: 0;
+
+      &.schema {
+        background-color: @agenda;
+      }
+
+      .icon {
+        font-family: 'spark';
+        vertical-align: text-bottom;
+      }
+    }
+
+    .icon.schema:before {
+      content: "\e01e";
+    }
+
+    .icon.publish:before {
+      content: "\e00f";
+    }
+
+  }
+}
+
+
+    &.main-button {
+      font-family: 'spark';
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      // line-height: 1;
+
+      /* Better Font Rendering =========== */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }

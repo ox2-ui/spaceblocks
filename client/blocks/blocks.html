@@ -8,16 +8,15 @@
 
 <template name="_blocksType1">
   <div class="block-1"> 
-    <button class="btn btn-default js-addBlockTo sparkicon sparkicon-plus"></button>
-    <button class="btn btn-primary sparkicon sparkicon-pencil"></button> 
-    <button class="btn btn-danger js-removeBlockType1 sparkicon sparkicon-trash"></button>
-    <button class="btn btn-info js-addComment sparkicon-chat-bubbles"></button>
       {{#if editing}} 
         <input type="text" class="form-control" value="{{content}}">
       {{else}}
         <h4 class="content">{{content}}</h4>
       {{/if}}
-
+      <button class="btn btn-default js-addBlockTo sparkicon sparkicon-plus"></button>
+      <button class="btn btn-primary sparkicon sparkicon-pencil"></button> 
+      <button class="btn btn-danger js-removeBlockType1 sparkicon sparkicon-trash"></button>
+      <button class="btn btn-info js-addComment sparkicon-chat-bubbles"></button>
   </div>
 </template>
 

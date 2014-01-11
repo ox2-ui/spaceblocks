@@ -10,16 +10,18 @@
     <div class="card js-selectCard" draggable="true" style="left: {{left}}; top: {{top}}; z-index: {{zIndex}};">
       <div class="card-header">
         <div class="card-info">
-          <h3 class="title schema">Agenda</h3>
+          <h3 class="title schema"> <span class="icon schema"></span> Agenda</h3>
         </div>
         <div class="control">
           <button type="button" class="btn btn-default js-newBlockText sparkicon sparkicon-menu"></button>
           <button type="button" class="btn btn-default sparkicon sparkicon-link"></button>
+          <input class="js-newBlockInput form-control block-input" type="text">
         </div>
-        <input class="js-newBlockInput form-control" type="text">
       </div>
+      <div class="block-list">
         {{#each blocks}}
           {{> blocksI}}
         {{/each}}
+      </div>
   </div>
 </template>
