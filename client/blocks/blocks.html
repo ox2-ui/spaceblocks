@@ -26,9 +26,9 @@
     <li class="list-group-item" style="color: black;"> <button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button><button class="btn btn-default parkicon-pencil js-editBlock"><span class="glyphicon glyphicon-pencil"></span></button> {{content}}<button class="btn btn-default js-removeBlockType2"><span class="glyphicon glyphicon-remove"></span></button>
     </li>
   {{#if editing}} 
-    <input type="textarea" row="3" class="form-control" value="{{content}}">
+    <input type="textarea" rows="3" class="form-control" value="{{content}}">
   {{else}}
-    <h4 class="content">{{mdConvert  content}}</h4>
+    <div class="content">{{{mdConvert  content}}}</div>
   {{/if}}
 
   </div>
