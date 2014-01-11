@@ -27,15 +27,12 @@ Template.cardsI.events({
       icon: ''
     })
     Session.set('edit_block', newBlock);
-    console.log(newBlock)
-      console.log('neblock');
-      var selector = ".focus-" + newBlock;
+    var selector = ".focus-" + newBlock;
 
       //  XXX hack to get input focus on added
       Meteor.setTimeout(function () {
         var inputs = document.querySelector(selector);
-      console.log(inputs)
-      inputs.focus();
+        inputs.focus();
       }, 100)
   },
   'keypress .js-newBlockInput' : function (e, t) {

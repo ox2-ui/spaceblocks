@@ -29,6 +29,11 @@ Template.blocksI.events({
   },
   'click .js-editBlock': function () {
     Session.set('edit_block', this._id);
+    var selector = ".focus-" + this._id;
+    Meteor.setTimeout(function () {
+      var inputs = document.querySelector(selector);
+      inputs.focus();
+    }, 100)
   },
   'keypress input': function (e, t) {
               if (e.keyCode === 13) {
