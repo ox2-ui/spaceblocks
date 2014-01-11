@@ -1,6 +1,6 @@
 Template.blocksI.helpers({
   linked: function () {
-    return _.contains(this.connections, Session.get("selected_block")) ? 'linked': '';
+    return _.intersection(this.connections, Session.get("selected_block")).length <1 ? '': 'linked';
   },
   editing: function () {
     return Session.equals('edit_block', this._id);
@@ -9,7 +9,7 @@ Template.blocksI.helpers({
 
 Template.blocksI.events({
   'click .js-selectBlock': function () {
-    Session.set("selected_block", this._id)
+    Session.set("selected_block", [this._id])
   },
   'click .js-removeBlockType': function () {
 
@@ -17,13 +17,13 @@ Template.blocksI.events({
     Blocks.remove({'_id': this._id})
   },
   'click .js-addBlockTo': function () {
-    if (Session.get('selected_block') && !Session.equals('selected_block', this._id)) {
+    if (Session.get('selected_block').length < 1 && !_.contains(Session.get("selected_block"), this._id )) {
       Blocks.update({'_id': this._id}, {$addToSet: {connections : Session.get('selected_block')}});
       Blocks.update({'_id': Session.get('selected_block')}, {$addToSet: {connections : this._id}});
     }
   },
   'click .js-removeBlockTo': function () {
-    if (Session.get('selected_block')) {
+    if (Session.get('selected_block').length < 1) {
       Blocks.update({'_id': this._id}, {$pull: {connections : Session.get('selected_block')}});
       Blocks.update({'_id': Session.get('selected_block')}, {$pull: {connections : this._id}});
     }
@@ -61,26 +61,17 @@ Template.blocksI.events({
 })
 
 Template._blocksType1.helpers({
-  // editing: function () {
-  //   return Session.equals('edit_block', this._id);
-  // },
-  // linked: function () {
-  //   return _.contains(this.connections, Session.get("selected_block")) ? 'linked': '';
-  // },
   selected: function () {
-    return Session.equals('selected_block', this._id) ? "selected" : '';
+    return _.contains(Session.get("selected_block"), this._id) ? "selected" : '';
   }
 });
 
 Template._blocksType2.helpers({
-  editing: function () {
-    return Session.equals('edit_block', this._id);
-  },
-  // linked: function () {
-  //   return _.contains(this.connections, Session.get("selected_block")) ? 'linked': '';
+  // editing: function () {
+  //   return Session.equals('edit_block', this._id);
   // },
   selected: function () {
-    return Session.equals('selected_block', this._id) ? "selected" : '';
+    return _.contains(Session.get("selected_block"), this._id) ? "selected" : '';
   }
 });
 

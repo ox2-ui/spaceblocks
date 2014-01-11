@@ -55,5 +55,10 @@ Template.cardsI.events({
   },
   'click .js-selectCard': function () {
     Session.set("selected_card", this._id)
+  },
+  'click .js-showCardConnections': function () {
+    var blocks = Blocks.find({'boardId': this._id}, {fields: {id: 1}}).fetch();
+    var blockList = _.pluck(blocks, '_id')
+    Session.set("selected_block", blockList)
   }
 })
