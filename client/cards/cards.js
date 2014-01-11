@@ -27,14 +27,12 @@ Template.cardsI.events({
       icon: ''
     })
     Session.set('edit_block', newBlock);
-
+    console.log(newBlock)
       console.log('neblock');
-      var inputs = document.getElementsByTagName("input");
-      for (var i = 0; i < inputs.length; i++) {
-          if (inputs[i].className == 'newBlock') {
-              inputs[i].focus();
-          }
-      }
+      // var inputs = document.getElementsByTagName("input");
+      var inputas = $( "." + newBlock );
+      $( "." + newBlock ).css( "border", "3px solid red" );
+      console.log('%c inputas   ',  'background: #5D76DB; color: white; padding: 1px 15px 1px 5px;', inputas);
 
   },
   'keypress .js-newBlockInput' : function (e, t) {
