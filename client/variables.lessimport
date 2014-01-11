@@ -81,6 +81,11 @@
 
 @spark: #FF5A0B;
 
+@schema: @emerald;
+@publish: @peter-river;
+@roles: @pumpkin;
+
+
 // Fonts
 @condensed: "roboto_condensedregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
 @condensed: 'Roboto Condensed', "Helvetica Neue", Helvetica, Arial, sans-serif;

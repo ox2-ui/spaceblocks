@@ -1,0 +1,64 @@
+@import "spaceblocks.lessimport";
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 1000px;
+  height: 1000px;
+  background-color: @background;
+  font-family: @condensed;
+}
+
+[draggable] {
+  cursor: move;
+}
+
+.sticky-buttons {
+  position: fixed;
+  top: 2px;
+  z-index: 200;
+  padding: .3em;
+  background-color: rgba(149, 165, 166,.5);
+
+  &.right {
+    right: 2px;
+  }
+
+  &.left {
+    left: 2px;
+  }
+}
+
+.card-button {
+  text-align: center;
+  &:extend(.unstyled-button);
+  color: white;
+  padding: .2em;
+  font-size: 2.5em;
+  min-width: 50px;
+  min-height: 50px;
+
+  &.schema {
+    background-color: @schema;
+
+    &:hover {
+      background-color: darken(@schema, 3%)
+    }
+  }
+
+  &.publish {
+    background-color: @publish;
+
+    &:hover {
+      background-color: darken(@publish, 3%)
+    }
+  }
+
+  &.roles {
+    background-color: @roles;
+
+    &:hover {
+      background-color: darken(@roles, 3%)
+    }
+  }
+}

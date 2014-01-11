@@ -12,11 +12,14 @@
 </body>
 
 <template name="controls">
-  <button type="button" id="deleteRecords" class="btn btn-warning">Delete</button>
-  <button type="button" id="insertCard" class="btn btn-warning">Card</button>
-  <div class="sticky-buttons">
-    
+  <div class="sticky-buttons left">
+      <button class="card-button sparkicon sparkicon-share schema" id="insertCard"></button>
+      <button class="card-button sparkicon sparkicon-signal publish" id="insertCard"></button>
+      <button class="card-button sparkicon sparkicon-key roles" id="insertCard"></button>
   </div>
+  <div class="sticky-buttons right">
+      <button type="button" id="deleteRecords" class="btn btn-danger btn-xs pull-right">Flush Data</button>
+  </div> 
 </template>
 
 
