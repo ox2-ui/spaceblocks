@@ -1,0 +1,186 @@
+// Flat UI Colors
+
+@turquoise: #1ABC9C;
+@emerland: #2ECC71;
+@peter-river: #3498DB;
+@amethyst: #9B59B6;
+@wet-asphalt: #34495E;
+
+@green-sea: #16A085;
+@nephritis: #27AE60;
+@belize-hole: #2980B9;
+@wisteria: #8E44AD;
+@midnight-blue: #2C3E50;
+
+
+@sun-flower: #F1C40F;
+@carrot: #E67E22;
+@alizarin: #E74C3C;
+@clouds: #ECF0F1;
+@concrete: #95A5A6;
+
+@orange: #F39C12;
+@pumpkin: #D35400;
+@pomegranate: #C0392B;
+@silver: #BDC3C7;
+@asbestos: #7F8C8D;
+
+// Custom Flat Ui Colors
+@california-grapes: #BD4F7A;
+@lipstick #8C3557;
+
+// Spark UI
+@light-heading: #C3C4C5;
+@dark-heading: #545657;
+@background: #DDE3E6;
+@item-background :#F5F8FA;
+@faded-icon: #DDE3E6;
+@menu: #333;
+@menu-icon: #E4E4E4;
+
+// Old vars need refactor
+@warning: #f0ad4e;
+@error: #d9534f;
+@danger: #d43f3a;
+@success: @nephritis;
+@nav-active: #a5a5a5;
+@nav-inactive: #cecece;
+
+// Status colors
+@offline: #F1C40F;
+@online: #27AE60;
+
+@positive: #357CDB;
+@negative: #FFA700;
+
+
+// Social
+@twitter: #00ACED;
+@facebook: #3B5998;
+@linkedin:#007FB1;
+@google:#D14836;
+
+
+// App specific naming
+@agenda: @sun-flower;
+@people: @emerland;
+@polls: @wet-asphalt;
+@answers: @silver;
+@alerts: @carrot;
+@map: @alizarin;
+@chat: @turquoise;
+@sponsors: @asbestos;
+@team: @wisteria;
+@people: @emerland;
+@info: @peter-river;
+@home: @team;
+@conversations: @concrete;
+@discussion: @turquoise;
+@notes: @peter-river;
+@favorites: @sun-flower;
+
+@spark: #FF5A0B;
+
+// Fonts
+@condensed: "roboto_condensedregular", "Helvetica Neue", Helvetica, Arial, sans-serif;
+// @condensed: "Roboto Condensed", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@normal: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+
+
+// Media queries breakpoints
+// --------------------------------------------------
+
+// Tiny screen / phone
+@screen-tiny:                480px;
+@screen-phone:               @screen-tiny;
+
+// Small screen / tablet
+@screen-small:               768px;
+@screen-tablet:              @screen-small;
+
+// Medium screen / desktop
+@screen-medium:              992px;
+@screen-desktop:             @screen-medium;
+
+// So media queries don't overlap when required, provide a maximum
+@screen-small-max:           (@screen-medium - 1);
+@screen-tablet-max:          @screen-small-max;
+
+// Large screen / wide desktop
+@screen-large:               1200px;
+@screen-large-desktop:       @screen-large;
+
+
+// Container sizes
+// --------------------------------------------------
+
+// Small screen / tablet
+@container-tablet:          728px;
+
+// Medium screen / desktop
+@container-desktop:         940px;
+
+// Large screen / wide desktop
+@container-large-desktop:   1170px;
+
+
+
+
+// Small columns (phones and up)
+
+
+// Medium columns (tablets and up)
+@media (min-width: @screen-tablet) {
+
+}
+
+@media (min-width: @screen-desktop) {
+  // Large columns (desktop and up)
+}
+
+// Responsive: Tablets and up
+@media screen and (min-width: @screen-tablet) {
+  // .container {
+  //   max-width: @container-tablet;
+  // }
+}
+
+// Responsive: Desktops and up
+@media screen and (min-width: @screen-desktop) {
+  // .container {
+  //   max-width: @container-desktop;
+  // }
+}
+
+// Responsive: Large desktops and up
+@media screen and (min-width: @screen-large-desktop) {
+  // .container {
+  //   max-width: @container-large-desktop;
+  // }
+}
+
+// Modal levels
+// --------------------------------------------------
+
+
+@level-content: 1010;
+@level-menu-back: 1015;
+@level-menu: 1020;
+
+
+@level-1-back: 1035;
+@level-1: 1040;
+
+@level-2-back: 1045;
+@level-2: 1050;
+
+@level-3-back:1055;
+@level-3: 1060;
+
+@level-4-back: 1065;
+@level-4: 1070;
+
+
+@level-5-back: 1075;
+@level-5: 1080;

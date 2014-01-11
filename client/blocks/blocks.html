@@ -7,16 +7,26 @@
 </template>
 
 <template name="_blocksType1">
-  <div>
-  <li class="list-group-item" style="color: black;"> <button class="btn btn-default js-addBlockTo"><span class="glyphicon glyphicon-plus"></span></button><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button> {{content}} <button class="btn btn-default js-removeBlockType1"><span class="glyphicon glyphicon-remove"></span>Delete</button><button class="btn btn-default js-addComment"><span class="glyphicon glyphicon-plus"></span>Commment</button>
-  </li>
+  <div class="block-1"> 
+    <button class="btn btn-default js-addBlockTo sparkicon sparkicon-plus"></button>
+    <button class="btn btn-primary sparkicon sparkicon-pencil"></button> 
+    <button class="btn btn-danger js-removeBlockType1 sparkicon sparkicon-trash"></button>
+    <button class="btn btn-info js-addComment sparkicon-chat-bubbles"></button>
+      {{#if editing}} 
+        <input type="text" class="form-control" value="{{content}}">
+      {{else}}
+        <h4 class="content">{{content}}</h4>
+      {{/if}}
+
   </div>
 </template>
 
 <template name="_blocksType2">
-  <div>
-  <li class="list-group-item" style="color: black;"> <button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button> {{content}}<button class="btn btn-default js-removeBlockType2"><span class="glyphicon glyphicon-remove"></span></button>
-  </li>
+  <div class="block-2">
+    <li class="list-group-item" style="color: black;"> <button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button> {{content}}<button class="btn btn-default js-removeBlockType2"><span class="glyphicon glyphicon-remove"></span></button>
+    </li>
+
+
   </div>
 </template>
 
