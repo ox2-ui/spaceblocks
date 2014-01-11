@@ -5,13 +5,19 @@
   margin-bottom: .3em;
 
   .content {
+    font-family: @condensed;
     padding: .3em;
     margin: .5em 0;
     border: 1px solid @faded-icon;
     color: @dark-heading;
-    font-weight: 300;
+    font-size: 1.2em;
 
     &.selected {
+      background-color: @orange;
+      color:white;
+    }
+
+    &.linked {
       background-color: @emerald;
       color:white;
     }
