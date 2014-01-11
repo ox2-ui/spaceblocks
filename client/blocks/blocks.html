@@ -3,9 +3,9 @@
   {{#blockType type}}
   {{/blockType}}
   <button class="btn btn-default js-addBlockTo sparkicon sparkicon-plus"></button>
-  <button class="btn btn-primary sparkicon sparkicon-pencil js-editBlock"></button> 
-  <button class="btn btn-danger js-removeBlockType sparkicon sparkicon-trash"></button>
-  <button class="btn btn-info js-addComment sparkicon-chat-bubbles"></button>
+  <button class="btn btn-default sparkicon sparkicon-pencil js-editBlock"></button> 
+  <button class="btn btn-default js-removeBlockType sparkicon sparkicon-trash"></button>
+  <button class="btn btn-default js-addComment sparkicon-chat-bubbles"></button>
 </div>
 </template>
 
@@ -14,7 +14,7 @@
       {{#if editing}} 
         <input type="text" class="form-control  focus-{{_id}}" value="{{content}}">
       {{else}}
-        <h4 class="content">{{content}}</h4>
+        <h4 class="content XXXselected">{{content}}</h4>
       {{/if}}
   </div>
 </template>

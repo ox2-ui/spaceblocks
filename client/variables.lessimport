@@ -1,7 +1,7 @@
 // Flat UI Colors
 
 @turquoise: #1ABC9C;
-@emerland: #2ECC71;
+@emerald: #2ECC71;
 @peter-river: #3498DB;
 @amethyst: #9B59B6;
 @wet-asphalt: #34495E;
@@ -63,7 +63,7 @@
 
 // App specific naming
 @agenda: @sun-flower;
-@people: @emerland;
+@people: @emerald;
 @polls: @wet-asphalt;
 @answers: @silver;
 @alerts: @carrot;
@@ -71,7 +71,7 @@
 @chat: @turquoise;
 @sponsors: @asbestos;
 @team: @wisteria;
-@people: @emerland;
+@people: @emerald;
 @info: @peter-river;
 @home: @team;
 @conversations: @concrete;
