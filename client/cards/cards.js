@@ -11,7 +11,7 @@ Template.cards.helpers({
 Template.cardsI.helpers({
   blocks: function () {
     // return Blocks.find({'boardId': {$in: [this._id]}}, {sort: {createdAt: -1}});
-    return Blocks.find({'boardId': this._id}, {sort: {createdAt: -1}});
+    return Blocks.find({'boardId': this._id}, {sort: {createdAt: 1}});
   }
 })
 

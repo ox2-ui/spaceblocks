@@ -1,5 +1,5 @@
 <template name="blocksI">
-<div class="js-selectBlock {{selectedBlock}}">
+<div class="{{selectedBlock}}">
   {{#blockType type}}
   {{/blockType}}
   {{#if linked}}
@@ -7,26 +7,26 @@
   {{else}}
     <button class="btn btn-default js-addBlockTo sparkicon sparkicon-plus"></button>
   {{/if}}
-  <button class="btn btn-default sparkicon sparkicon-pencil js-editBlock"></button> 
+  <button class="btn btn-default sparkicon sparkicon-pencil btn-success sparkicon-checkmark js-editBlock"></button> 
   <button class="btn btn-default js-removeBlockType sparkicon sparkicon-trash"></button>
   <button class="btn btn-default js-addComment sparkicon-chat-bubbles"></button>
 </div>
 </template>
 
 <template name="_blocksType1">
-  <div class="block-1"> 
+  <div class="block-1 js-selectBlock"> 
       {{#if editing}} 
         <input type="text" class="form-control  focus-{{_id}}" value="{{content}}">
       {{else}}
-        <h4 class="content {{linked}} {{selected}}">{{content}}</h4>
+        <h4 class="content {{linked}}  {{selected}}">{{content}}</h4>
       {{/if}}
   </div>
 </template>
 
 <template name="_blocksType2">
-  <div class="block-2">
+  <div class="block-2 js-selectBlock">
     {{#if editing}} 
-      <input type="textarea" rows=3 class="form-control  focus-{{_id}}" value="{{content}}">
+      <textarea class="form-control  focus-{{_id}}" rows="3">{{content}}</textarea>
     {{else}}
       <div class="content {{linked}} {{selected}}">{{{mdConvert  content}}}</div>
     {{/if}}
