@@ -1,3 +1,5 @@
+Session.set('selected_project', 'pro1')
+
 Meteor.subscribe('projects');
 Meteor.subscribe('cards', Session.get('selected_project'));
 Meteor.subscribe('blocks', Session.get('selected_project'));

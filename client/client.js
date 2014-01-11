@@ -71,20 +71,79 @@ UI.body.events({
 //   }
 // });
 
+//  Schema for Cards
+//  type - 1 'schema' = schema
+//  type - 2  'publish'=  publish
+//  type - 3 'roles' = roles
+
 Template.controls.events({
-  'click #insertCard' : function (e) {
+  'click #insertCardSchema' : function (e) {
     // console.log('%c e click   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
      Cards.insert({
        createdAt: new Date(),
        cardName: "Test " + Random.id() ,
        projectId: Session.get('selected_project'),
-       type: "",
-       left: "",
-       top: "",
+       type: "schema",
+       left: "100px",
+       top: "100px",
        zIndex: 0
      }, function(err, _id){
       if(err) {
         console.log(err);
+      } else {
+        Session.set('edit_card', _id)
+        var selector = ".focus-" + _id;
+        Meteor.setTimeout(function () {
+          var inputs = document.querySelector(selector);
+          if (inputs)
+          inputs.focus();
+        }, 100)
+      }
+    });
+  },
+  'click #insertCardPublish' : function (e) {
+    // console.log('%c e click   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
+     Cards.insert({
+       createdAt: new Date(),
+       cardName: "Test " + Random.id() ,
+       projectId: Session.get('selected_project'),
+       type: "publish",
+       left: "100px",
+       top: "100px",
+       zIndex: 0
+     }, function(err, _id){
+      if(err) {
+        console.log(err);
+      } else {
+        Session.set('edit_card', _id)
+        var selector = ".focus-" + _id;
+        Meteor.setTimeout(function () {
+          var inputs = document.querySelector(selector);
+          inputs.focus();
+        }, 100)
+      }
+    });
+  },
+  'click #insertCardRoles' : function (e) {
+    // console.log('%c e click   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
+     Cards.insert({
+       createdAt: new Date(),
+       cardName: "Test " + Random.id() ,
+       projectId: Session.get('selected_project'),
+       type: "roles",
+       left: "100px",
+       top: "100px",
+       zIndex: 0
+     }, function(err, _id){
+      if(err) {
+        console.log(err);
+      } else {
+        Session.set('edit_card', _id)
+        var selector = ".focus-" + _id;
+        Meteor.setTimeout(function () {
+          var inputs = document.querySelector(selector);
+          inputs.focus();
+        }, 100)
       }
     });
   },

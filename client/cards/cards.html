@@ -11,9 +11,9 @@
       <div class="card-header">
         <div class="card-info">
         {{#if editing}} 
-          <h3 class="title schema"> <span class="icon schema"></span><input type="text" class="form-control  focus-{{_id}} js-cardName" value="{{cardName}}"></h3>
+          <h3 class="title {{type}}"> <span class="icon {{type}}"></span><input type="text" class="form-control  focus-{{_id}} js-cardName" value="{{cardName}}"></h3>
         {{else}}
-          <h3 class="title schema js-editCardTitle"> <span class="icon schema"></span> {{cardName}}</h3>
+          <h3 class="title {{type}} js-editCardTitle"> <span class="icon {{type}}"></span> {{cardName}}</h3>
         {{/if}}
         </div>
         <div class="control">
