@@ -1,6 +1,7 @@
-Template.images.rendered = function () {
-  dragndrop();
-};
+// Template.images.rendered = function () {
+//   dragndrop();
+// };
+
 
 var myX = '';
 var myY = '';
@@ -8,7 +9,7 @@ var whichCard = '';
 
 UI.body.events({
   'dragstart': function (e) {
-      Session.set("draggedItem", this._id);
+      Session.set("dragged_item", this._id);
       console.log('%c dragstart   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', this);
       whichCard = e.currentTarget;
       console.log('%c whichCard   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', whichCard);
@@ -20,7 +21,6 @@ UI.body.events({
   },
   'dragover': function (e) {
     console.log('%c dragover   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;');
-
     e.preventDefault();
   },
   'drop': function (e) {
@@ -37,9 +37,7 @@ UI.body.events({
 
 });
 
-Template.cards.cards = function () {
-  return Cards.find();
-};
+
 
 
 // Template.cards.events({

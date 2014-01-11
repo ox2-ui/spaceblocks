@@ -7,7 +7,7 @@
 <body>
   {{> controls}}
   {{> cards}}
-  {{> images}}
+  {{! > images}}
 </body>
 
 <template name="controls">
@@ -21,18 +21,7 @@
 </div>
 </template>
 
-<template name="cards">
-  <div class="cards">
-    {{#each cards}}
-      <div class="card" draggable="true" style="left: {{left}}; top: {{top}}; z-index: {{zIndex}};">
-        <h5><b>Name: </b>{{cardName}}</h5>
-        <p><b>top:</b> {{top}}</p>
-        <p><b>left:</b> {{left}}</p>
-        <p><b>z-index:</b> {{zIndex}}</p>
-    </div>
-    {{/each}}
-  </div>
-</template>
+
 
 <template name="images">
 

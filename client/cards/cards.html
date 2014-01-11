@@ -1,0 +1,26 @@
+<template name="cards">
+  <div class="cards">
+    {{#each cards}}
+      {{> cardsI}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="cardsI">
+    <div class="card js-selectCard" draggable="true" style="left: {{left}}; top: {{top}}; z-index: {{zIndex}};">
+      <div class="btn-group">
+        <button type="button" class="btn btn-default js-newBlockText">Text</button>
+        <button type="button" class="btn btn-default">Link</button></div><br>
+        <input class="js-newBlockInput" type="text">
+      <h5><b>Name: </b>{{cardName}}</h5>
+<!--       <p><b>top:</b> {{top}}</p>
+      <p><b>left:</b> {{left}}</p>
+      <p><b>z-index:</b> {{zIndex}}</p> -->
+        <h5>Blocks</h5>
+        <ul class="list-group">
+        {{#each blocks}}
+          {{> blocksI}}
+        {{/each}}
+        </ul>
+  </div>
+</template>

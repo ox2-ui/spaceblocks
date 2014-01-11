@@ -33,7 +33,7 @@ dragndrop = function() {
     var dropY = e.pageY - myY + 'px';
     whichArt.style.left = dropX;
     whichArt.style.top = dropY;
-    Cards.update({_id: Session.get("draggedItem")}, { $set: { top: dropY, left: dropX, zIndex: 10 }} );
+    Cards.update({_id: Session.get("dragged_item")}, { $set: { top: dropY, left: dropX, zIndex: 10 }} );
   }
 
 // function touchStart(e) {
