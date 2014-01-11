@@ -10,27 +10,27 @@ var whichCard = '';
 UI.body.events({
   'dragstart': function (e) {
       Session.set("dragged_item", this._id);
-      console.log('%c dragstart   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', this);
+      // console.log('%c dragstart   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', this);
       whichCard = e.currentTarget;
-      console.log('%c whichCard   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', whichCard);
-      console.log('%c e   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
+      // console.log('%c whichCard   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', whichCard);
+      // console.log('%c e   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
       myX = e.offsetX === undefined ? e.layerX : e.offsetX;
       myY = e.offsetY === undefined ? e.layerY : e.offsetY;
       // resetZ();
       whichCard.style.zIndex = 10;
   },
   'dragover': function (e) {
-    console.log('%c dragover   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;');
+    // console.log('%c dragover   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;');
     e.preventDefault();
   },
   'drop': function (e) {
-    console.log('%c drop   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', this);
+    // console.log('%c drop   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', this);
     e.preventDefault();
-    console.log('%c whichCard   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', whichCard);
+    // console.log('%c whichCard   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', whichCard);
     // Alerts.update({_id: this._id}, {$set: {top: 1}});
     // xcord = e;
     // console.log('%c xcord   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', xcord);
-    console.log('%c myX   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', myX);
+    // console.log('%c myX   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', myX);
     // whichCard.style.left = e.pageX - myX + 'px';
     // whichCard.style.top = e.pageY - myY + 'px';
   }
