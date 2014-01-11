@@ -1,0 +1,12 @@
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: break-word;
+}
+
+.unstyled-button {
+    padding: 0;
+    border: 0;
+    outline: none;
+}
