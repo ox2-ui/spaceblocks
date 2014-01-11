@@ -40,6 +40,7 @@ Template.blocksI.events({
 
 Template._blocksType1.helpers({
   editing: function () {
+    console.log('editing')
     return Session.equals('edit_block', this._id);
   }
 });

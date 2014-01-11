@@ -26,7 +26,16 @@ Template.cardsI.events({
       boardId: [this._id],
       icon: ''
     })
-    Session.set('edit_block', newBlock)
+    Session.set('edit_block', newBlock);
+
+      console.log('neblock');
+      var inputs = document.getElementsByTagName("input");
+      for (var i = 0; i < inputs.length; i++) {
+          if (inputs[i].className == 'newBlock') {
+              inputs[i].focus();
+          }
+      }
+
   },
   'keypress .js-newBlockInput' : function (e, t) {
     var curLenght = e.currentTarget.value.length;
