@@ -12,7 +12,7 @@
 <template name="_blocksType1">
   <div class="block-1"> 
       {{#if editing}} 
-        <input type="text" class="form-control {{_id}}" value="{{content}}">
+        <input type="text" class="form-control  focus-{{_id}}" value="{{content}}">
       {{else}}
         <h4 class="content">{{content}}</h4>
       {{/if}}
@@ -22,7 +22,7 @@
 <template name="_blocksType2">
   <div class="block-2">
     {{#if editing}} 
-      <input type="textarea" rows=3 class="form-control {{_id}}" value="{{content}}">
+      <input type="textarea" rows=3 class="form-control  focus-{{_id}}" value="{{content}}">
     {{else}}
       <div class="content">{{{mdConvert  content}}}</div>
     {{/if}}
