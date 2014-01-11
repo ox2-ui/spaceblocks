@@ -9,7 +9,7 @@
 <template name="_blocksType1">
   <div class="block-1"> 
     <button class="btn btn-default js-addBlockTo sparkicon sparkicon-plus"></button>
-    <button class="btn btn-primary sparkicon sparkicon-pencil"></button> 
+    <button class="btn btn-primary sparkicon sparkicon-pencil js-editBlock"></button> 
     <button class="btn btn-danger js-removeBlockType1 sparkicon sparkicon-trash"></button>
     <button class="btn btn-info js-addComment sparkicon-chat-bubbles"></button>
       {{#if editing}} 
@@ -23,9 +23,13 @@
 
 <template name="_blocksType2">
   <div class="block-2">
-    <li class="list-group-item" style="color: black;"> <button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button><button class="btn btn-default"><span class="glyphicon glyphicon-pencil"></span></button> {{content}}<button class="btn btn-default js-removeBlockType2"><span class="glyphicon glyphicon-remove"></span></button>
+    <li class="list-group-item" style="color: black;"> <button class="btn btn-default"><span class="glyphicon glyphicon-plus"></span></button><button class="btn btn-default parkicon-pencil js-editBlock"><span class="glyphicon glyphicon-pencil"></span></button> {{content}}<button class="btn btn-default js-removeBlockType2"><span class="glyphicon glyphicon-remove"></span></button>
     </li>
-
+  {{#if editing}} 
+    <input type="textarea" row="3" class="form-control" value="{{content}}">
+  {{else}}
+    <h4 class="content">{{mdConvert  content}}</h4>
+  {{/if}}
 
   </div>
 </template>
