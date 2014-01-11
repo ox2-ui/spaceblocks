@@ -24,7 +24,7 @@ Template.blocksI.events({
     }
   },
   'click .js-removeBlockTo': function () {
-    if (Session.get('selected_block').length == 1 && _.contains(Session.get("selected_block"), this._id )) {
+    if (Session.get('selected_block').length == 1) {
       Blocks.update({'_id': this._id}, {$pull: {connections : Session.get('selected_block')[0]}});
       Blocks.update({'_id': Session.get('selected_block')[0]}, {$pull: {connections : this._id}});
     }

@@ -27,6 +27,7 @@ Template.cardsI.events({
       content: '',
       comments: [],
       boardId: [this._id],
+      creatorId: this._id,
       icon: ''
     })
     Session.set('edit_block', newBlock);
@@ -48,6 +49,7 @@ Template.cardsI.events({
           content: e.currentTarget.value,
           comments: [],
           boardId: [this._id],
+          creatorId: this._id,
           icon: ''
         })
         e.currentTarget.value = "";
@@ -77,5 +79,12 @@ Template.cardsI.events({
                   Cards.update({'_id': this._id}, { $set: { cardName: e.currentTarget.value }});
                   Session.set('edit_card', '');
               }
+  },
+  'click .js-deleteCard': function () {
+    Session.set('selected_card', '');
+    Session.set('selected_block', '');
+    Session.set('edit_card', '');
+    Meteor.call('removeCard', this._id);
+    
   }
 })
