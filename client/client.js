@@ -77,6 +77,7 @@ Template.controls.events({
      Cards.insert({
        createdAt: new Date(),
        cardName: "Test " + Random.id() ,
+       projectId: Session.get('selected_project'),
        type: "",
        left: "",
        top: "",

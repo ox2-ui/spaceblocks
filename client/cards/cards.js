@@ -28,6 +28,7 @@ Template.cardsI.events({
       comments: [],
       boardId: [this._id],
       creatorId: this._id,
+      projectId: Session.get('selected_project'),
       icon: ''
     })
     Session.set('edit_block', newBlock);
@@ -50,6 +51,7 @@ Template.cardsI.events({
           comments: [],
           boardId: [this._id],
           creatorId: this._id,
+          projectId: Session.get('selected_project'),
           icon: ''
         })
         e.currentTarget.value = "";

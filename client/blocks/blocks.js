@@ -33,6 +33,7 @@ Template.blocksI.events({
     var newComment = Comments.insert({
       createdAt: new Date(),
       boardId: Session.get("selected_card"),
+      projectId: Session.get('selected_project'),
       content: ''
     });
     Blocks.update({'_id': this._id}, {$addToSet: {comments : newComment}})
