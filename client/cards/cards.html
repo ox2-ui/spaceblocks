@@ -8,19 +8,18 @@
 
 <template name="cardsI">
     <div class="card js-selectCard" draggable="true" style="left: {{left}}; top: {{top}}; z-index: {{zIndex}};">
-      <div class="btn-group">
-        <button type="button" class="btn btn-default js-newBlockText">Text</button>
-        <button type="button" class="btn btn-default">Link</button></div><br>
-        <input class="js-newBlockInput" type="text">
-      <h5><b>Name: </b>{{cardName}}</h5>
-<!--       <p><b>top:</b> {{top}}</p>
-      <p><b>left:</b> {{left}}</p>
-      <p><b>z-index:</b> {{zIndex}}</p> -->
-        <h5>Blocks</h5>
-        <ul class="list-group">
+      <div class="card-header">
+        <div class="card-info">
+          <h3 class="title schema">Agenda</h3>
+        </div>
+        <div class="control">
+          <button type="button" class="btn btn-default js-newBlockText sparkicon sparkicon-menu"></button>
+          <button type="button" class="btn btn-default sparkicon sparkicon-link"></button>
+        </div>
+        <input class="js-newBlockInput form-control" type="text">
+      </div>
         {{#each blocks}}
           {{> blocksI}}
         {{/each}}
-        </ul>
   </div>
 </template>
