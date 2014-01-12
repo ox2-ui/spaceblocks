@@ -1,29 +1,36 @@
 <template name="blocksI">
-<div class="{{selectedBlock}}">
-  {{#blockType type}}
-  {{/blockType}}
-  {{#if editing}}
-    <button class="btn btn-success sparkicon sparkicon-checkmark js-saveBlock"></button> 
-    <button class="btn btn-danger sparkicon sparkicon-close2 js-cancelBlock"></button> 
-  {{else}}
-    {{#if linked}}
-      <button class="btn btn-default js-removeBlockTo sparkicon sparkicon-minus"></button>
-    {{else}}
-      <button class="btn btn-default js-addBlockTo sparkicon sparkicon-plus"></button>
-    {{/if}}
-    <button class="btn btn-default sparkicon sparkicon-pencil js-editBlock"></button> 
-    <button class="btn btn-default js-removeBlockType sparkicon sparkicon-trash"></button>
-    <button class="btn btn-default js-addComment sparkicon-chat-bubbles"></button>
-  {{/if}}
+  <div class="{{selectedBlock}}">
+    {{#blockType type}}
+    {{/blockType}}
+    <div class="item-controls">
+      {{#if editing}}
+        <button class="btn btn-success sparkicon sparkicon-checkmark js-saveBlock"></button> 
+        <button class="btn btn-danger sparkicon sparkicon-close2 js-cancelBlock"></button> 
+      {{else}}
+    <!--     {{#if linked}}
+          <button class="btn btn-default js-removeBlockTo sparkicon sparkicon-minus"></button>
+        {{else}}
+          <button class="btn btn-default js-addBlockTo sparkicon sparkicon-plus"></button>
+        {{/if}} -->
+        <button class="btn btn-default sparkicon sparkicon-pencil js-editBlock"></button> 
+        <button class="btn btn-default js-removeBlockType sparkicon sparkicon-trash"></button>
+        <button class="btn btn-default js-addComment sparkicon-chat-bubbles"></button>
+      {{/if}}
+    </div>
   </div>
 </template>
 
 <template name="_blocksType1">
-  <div class="block-1 js-selectBlock"> 
+  <div class="block-1"> 
       {{#if editing}} 
         <input type="text" class="form-control  focus-{{_id}}" value="{{content}}">
       {{else}}
-        <h4 class="content {{linked}}  {{selected}}">{{content}}</h4>
+        {{#if linked}}
+          <button class="addon-button js-removeBlockTo sparkicon sparkicon-minus"></button>
+        {{else}}
+          <button class="addon-button js-addBlockTo sparkicon sparkicon-plus"></button>
+        {{/if}}
+        <h4 class="content {{linked}}  {{selected}} js-selectBlock">{{content}}</h4>
       {{/if}}
   </div>
 </template>

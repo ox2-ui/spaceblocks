@@ -81,7 +81,7 @@ Template.controls.events({
     // console.log('%c e click   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
      Cards.insert({
        createdAt: new Date(),
-       cardName: "Test " + Random.id() ,
+       cardName: "" ,
        projectId: Session.get('selected_project'),
        type: "schema",
        left: "100px",
@@ -105,7 +105,7 @@ Template.controls.events({
     // console.log('%c e click   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
      Cards.insert({
        createdAt: new Date(),
-       cardName: "Test " + Random.id() ,
+       cardName: "" ,
        projectId: Session.get('selected_project'),
        type: "publish",
        left: "100px",
@@ -128,7 +128,7 @@ Template.controls.events({
     // console.log('%c e click   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
      Cards.insert({
        createdAt: new Date(),
-       cardName: "Test " + Random.id() ,
+       cardName: "" ,
        projectId: Session.get('selected_project'),
        type: "roles",
        left: "100px",

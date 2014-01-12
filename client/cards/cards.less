@@ -15,7 +15,7 @@
   }
 
   .block-list {
-    padding: .3em 1em;
+    padding: .3em 1em 1em .3em;
   }
 }
 
@@ -34,13 +34,18 @@
   }
 
   .card-info {
+    display: flex;
+    border-bottom: 1px solid @faded-icon;
 
-    .title {
-      color: white;
-      padding: .3em .5em;
-      margin: 0;
-      font-weight: 300;
-      font-family: @condensed;
+    .addon {
+    
+      flex: 2;
+      padding: .3em;
+      text-align: center;
+
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
 
       &.schema {
         background-color: @schema;
@@ -50,14 +55,39 @@
         background-color: @publish;
       }
 
-      &.pumpkin {
-        background-color: @pumpkin;
+      &.roles {
+        background-color: @roles;
+      }
+    }
+
+    .title {
+      color: @dark-heading;
+      padding: .3em .5em;
+      margin: 0;
+      font-weight: normal;
+      font-family: @condensed;
+      flex: 10;
+
+      &.schema {
+        background-color: @schema;
       }
 
-      .icon {
-        font-family: 'spark';
-        // vertical-align: text-bottom;
+      &.publish {
+        background-color: @publish;
       }
+
+      &.roles {
+        background-color: @roles;
+      }
+
+
+    }
+
+    .icon {
+      font-family: 'spark';
+      font-size: 1.7em;
+      // line-height: 1.7em;
+      // vertical-align: text-bottom;
     }
 
     .icon.schema:before {

@@ -81,7 +81,7 @@
 
 @spark: #FF5A0B;
 
-@schema: @turquoise;
+@schema: @emerald;
 @publish: @peter-river;
 @roles: @alizarin;
 
@@ -93,7 +93,7 @@
 @normal: "Helvetica Neue", Helvetica, Arial, sans-serif;
 @normal: "Roboto", Helvetica, Arial, sans-serif;
 
-
+@mono: 'Source Code Pro', sans-serif;
 
 // Media queries breakpoints
 // --------------------------------------------------

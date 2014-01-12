@@ -4,7 +4,7 @@ dragndrop = function() {
   var whichArt = '';
 
   function resetZ() {
-    var elements = document.querySelectorAll('img');
+    var elements = document.querySelectorAll('.card');
     for (var i = elements.length - 1; i >= 0; i--) {
       elements[i].style.zIndex = 5;
     };
