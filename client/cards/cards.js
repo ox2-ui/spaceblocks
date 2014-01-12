@@ -19,6 +19,12 @@ Template.cardsI.helpers({
 })
 
 Template.cardsI.events({
+  'click .js-cardCollapse': function () {
+    if (this.collapsed)
+      Cards.update({'_id': this._id}, {$set: {collapsed: ''}});
+    else
+      Cards.update({'_id': this._id}, {$set: {collapsed: 'collapsed'}});
+  },
   'click .js-newBlockText': function () {
     var newBlock = Blocks.insert({
       createdAt: new Date(),

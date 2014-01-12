@@ -10,7 +10,7 @@
     <div class="card js-selectCard" draggable="true" style="left: {{left}}; top: {{top}}; z-index: {{zIndex}};">
         <div class="card-header">
           <div class="card-info">
-            <div class="addon {{type}}">
+            <div class="addon {{type}} js-cardCollapse">
               <span class="icon {{type}}"></span>
             </div>
           {{#if editing}} 
@@ -23,7 +23,7 @@
           {{/if}}
           </div>
         </div>
-        <div class="card-content-wrapper XXXcollapsed">
+        <div class="card-content-wrapper {{collapsed}}">
           <div class="card-controls">
             <button type="button" class="btn btn-default js-newBlockText sparkicon sparkicon-paragraph"></button>
             <button type="button" class="btn btn-default sparkicon sparkicon-link-board2"></button>

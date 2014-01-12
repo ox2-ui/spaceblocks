@@ -84,6 +84,7 @@ Template.controls.events({
        cardName: "" ,
        projectId: Session.get('selected_project'),
        type: "schema",
+       collapsed: '',
        left: "100px",
        top: "100px",
        zIndex: 0
