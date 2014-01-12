@@ -5,6 +5,9 @@ Template.blocksI.helpers({
   editing: function () {
     return Session.equals('edit_block', this._id);
   },
+  selected: function () {
+    return _.contains(Session.get("selected_block"), this._id) ? "selected" : '';
+  }
 });
 
 Template.blocksI.events({
@@ -32,7 +35,7 @@ Template.blocksI.events({
   'click .js-addComment': function () {
     var newComment = Comments.insert({
       createdAt: new Date(),
-      boardId: Session.get("selected_card"),
+      cardId: Session.get("selected_card"),
       projectId: Session.get('selected_project'),
       content: ''
     });
@@ -62,20 +65,20 @@ Template.blocksI.events({
   }
 })
 
-Template._blocksType1.helpers({
-  selected: function () {
-    return _.contains(Session.get("selected_block"), this._id) ? "selected" : '';
-  }
-});
+// Template._blocksType1.helpers({
+//   selected: function () {
+//     return _.contains(Session.get("selected_block"), this._id) ? "selected" : '';
+//   }
+// });
 
-Template._blocksType2.helpers({
-  // editing: function () {
-  //   return Session.equals('edit_block', this._id);
-  // },
-  selected: function () {
-    return _.contains(Session.get("selected_block"), this._id) ? "selected" : '';
-  }
-});
+// Template._blocksType2.helpers({
+//   // editing: function () {
+//   //   return Session.equals('edit_block', this._id);
+//   // },
+//   selected: function () {
+//     return _.contains(Session.get("selected_block"), this._id) ? "selected" : '';
+//   }
+// });
 
 Template._blocksType1.events({
   'keypress input': function (e, t) {

@@ -1,7 +1,7 @@
 <template name="blocksI">
   <div class="{{selectedBlock}}">
     {{#blockType type}}
-      <div class="item-controls XXX is-visible">
+      <div class="item-controls {{#if selected}} is-visible {{/if}}">
         {{#if editing}}
           <button class="btn btn-success sparkicon sparkicon-checkmark js-saveBlock"></button> 
           <button class="btn btn-danger sparkicon sparkicon-close2 js-cancelBlock"></button> 

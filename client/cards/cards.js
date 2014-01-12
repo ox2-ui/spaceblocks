@@ -10,8 +10,8 @@ Template.cards.helpers({
 
 Template.cardsI.helpers({
   blocks: function () {
-    // return Blocks.find({'boardId': {$in: [this._id]}}, {sort: {createdAt: -1}});
-    return Blocks.find({'boardId': this._id}, {sort: {createdAt: 1}});
+    // return Blocks.find({'cardId': {$in: [this._id]}}, {sort: {createdAt: -1}});
+    return Blocks.find({'cardId': this._id}, {sort: {createdAt: 1}});
   },
   editing: function () {
     return Session.equals('edit_card', this._id);
@@ -32,7 +32,7 @@ Template.cardsI.events({
       type: 2,
       content: '',
       comments: [],
-      boardId: [this._id],
+      cardId: [this._id],
       creatorId: this._id,
       projectId: Session.get('selected_project'),
       icon: ''
@@ -55,7 +55,7 @@ Template.cardsI.events({
           type: 1,
           content: e.currentTarget.value,
           comments: [],
-          boardId: [this._id],
+          cardId: [this._id],
           creatorId: this._id,
           projectId: Session.get('selected_project'),
           icon: ''
@@ -70,7 +70,7 @@ Template.cardsI.events({
     Session.set("selected_card", this._id)
   },
   'click .js-showCardConnections': function () {
-    var blocks = Blocks.find({'boardId': this._id}, {fields: {id: 1}}).fetch();
+    var blocks = Blocks.find({'cardId': this._id}, {fields: {id: 1}}).fetch();
     var blockList = _.pluck(blocks, '_id')
     Session.set("selected_block", blockList)
   },
