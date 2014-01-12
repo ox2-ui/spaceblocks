@@ -10,15 +10,15 @@
     <div class="card js-selectCard" draggable="true" style="left: {{left}}; top: {{top}}; z-index: {{zIndex}};">
       <div class="card-header">
         <div class="card-info">
+          <div class="addon {{type}}">
+            <span class="icon {{type}}"></span>
+          </div>
         {{#if editing}} 
-          <input type="text" class="form-control  focus-{{_id}} js-cardName" value="{{cardName}}">
+          <input type="text" class="title insert-card  focus-{{_id}} js-cardName" value="{{cardName}}">
 
           <button class="delete-card btn btn-default btn-mini sparkicon sparkicon-trash js-deleteCard"></button>
 
         {{else}}
-        <div class="addon {{type}}">
-          <span class="icon {{type}}"></span>
-        </div>
           <h3 class="title  js-editCardTitle">  {{cardName}}</h3>
         {{/if}}
         </div>
