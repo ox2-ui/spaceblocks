@@ -10,3 +10,4 @@ Handlebars.registerHelper('blockType', function (type) {
 Handlebars.registerHelper("mdConvert", function (r,o) {
     return marked(r);
   });
+

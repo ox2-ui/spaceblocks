@@ -35,7 +35,7 @@ Template.cardsI.events({
       cardId: [this._id],
       creatorId: this._id,
       projectId: Session.get('selected_project'),
-      icon: ''
+      icon: this.type
     })
     Session.set('edit_block', newBlock);
     var selector = ".focus-" + newBlock;
@@ -58,7 +58,7 @@ Template.cardsI.events({
           cardId: [this._id],
           creatorId: this._id,
           projectId: Session.get('selected_project'),
-          icon: ''
+          icon: this.type
         })
         e.currentTarget.value = "";
     } else {
