@@ -37,6 +37,7 @@ dragndrop = function() {
   }
 
 // function touchStart(e) {
+//   // alert("start")
 //   e.preventDefault();
 //   var whichArt = e.target;
 //   var touch = e.touches[0];
@@ -46,6 +47,7 @@ dragndrop = function() {
 //   whichArt.style.zIndex = 10;
 
 //   whichArt.addEventListener('touchmove', function() {
+//     // alert("move")
 //     var positionX = touch.pageX + moveOffsetX;
 //     var positionY = touch.pageY + moveOffsetY;
 //     whichArt.style.left = positionX + 'px';

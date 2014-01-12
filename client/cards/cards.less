@@ -19,20 +19,25 @@
   }
 }
 
-.card-header {
-  margin-bottom: 1em;
-  color: white;
+.card-content-wrapper {
 
+  &.collapsed {
+    display: none;
+  }
+}
+
+.card-controls {
+  padding: .3em 1em;
+  text-align: center;
 
   .block-input {
     margin-top: .3em;
   }
+}
 
-
-  .control {
-    padding: .3em 1em;
-    text-align: center;
-  }
+.card-header {
+  // margin-bottom: 1em;
+  color: white;
 
   .card-info {
     display: flex;
