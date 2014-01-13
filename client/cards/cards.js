@@ -9,9 +9,15 @@ Template.cards.helpers({
 });
 
 Template.cardsI.helpers({
-  blocks: function () {
+  blocks: function (parentId) {
     // return Blocks.find({'cardId': {$in: [this._id]}}, {sort: {createdAt: -1}});
-    return Blocks.find({'cardId': this._id}, {sort: {createdAt: 1}});
+    var blocks = Blocks.find({'cardId': this._id}, {sort: {createdAt: 1}}).fetch();
+    var newBlocks = blocks.map(function(block) {
+      if (parentId != block.creatorId)
+        block.mirror = true;
+      return block;
+      });
+    return newBlocks
   },
   editing: function () {
     return Session.equals('edit_card', this._id);
@@ -19,6 +25,11 @@ Template.cardsI.helpers({
 })
 
 Template.cardsI.events({
+  'click .js-linkCard': function () {
+    if (Session.get('selected_block').length == 1 && !_.contains(Session.get("selected_block"), this._id )) {
+      Blocks.update({'_id': Session.get('selected_block')[0]}, {$addToSet: {cardId: this._id}})
+    }
+  },
   'click .js-cardCollapse': function () {
     if (this.collapsed)
       Cards.update({'_id': this._id}, {$set: {collapsed: ''}});

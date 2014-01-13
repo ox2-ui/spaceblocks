@@ -31,11 +31,11 @@
           <button class="addon-button js-addBlockTo sparkicon sparkicon-plus"></button>
         {{/if}}
         <div class="item-wrapper {{selected}}">
-
-<!--           <div class="addon {{type}}">
-            <span class="icon {{type}}"></span>
+{{#if this.mirror}}
+          <div class="addon {{icon}}">
+            <span class="icon {{icon}}"></span>
           </div>
-     -->
+    {{/if}}
           <h4 class="content {{linked}} js-selectBlock">{{content}}</h4>
         </div>
       {{/if}}
@@ -54,9 +54,11 @@
         <button class="addon-button js-addBlockTo sparkicon sparkicon-plus"></button>
       {{/if}}
       <div class="item-wrapper {{selected}}">
-<!--         <div class="addon schema">
-          <span class="icon schema"></span>
-        </div> -->
+{{#if this.mirror}}
+          <div class="addon {{icon}}">
+            <span class="icon {{icon}}"></span>
+          </div>
+    {{/if}}
         <div class="content {{linked}} {{selected}}">{{{mdConvert  content}}}</div>
       </div>
     {{/if}}

@@ -26,12 +26,12 @@
         <div class="card-content-wrapper {{collapsed}}">
           <div class="card-controls">
             <button type="button" class="btn btn-default js-newBlockText sparkicon sparkicon-paragraph"></button>
-            <button type="button" class="btn btn-default sparkicon sparkicon-link-board2"></button>
+            <button type="button" class="btn btn-default sparkicon sparkicon-link-board2 js-linkCard"></button>
             <button type="button" class="btn btn-default sparkicon sparkicon-keyboard2 js-showCardConnections"></button>
             <input class="js-newBlockInput form-control block-input" type="text">
           </div>
           <div class="block-list ">
-            {{#each blocks}}
+            {{#each blocks _id}}
               {{> blocksI}}
             {{/each}}
           </div>
