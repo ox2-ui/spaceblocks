@@ -97,7 +97,7 @@ Template.controls.events({
     Session.set('edit_projects', false)
   },
   'click .js-openProjects': function () {
-    Session.set('edit_projects', true);
+    Session.equals('edit_projects', true) ? Session.set('edit_projects', false) : Session.set('edit_projects', true);
   },
   'keypress #newProjectInput': function (e) {
     var curLenght = e.currentTarget.value.length;
