@@ -13,22 +13,38 @@ input:focus, textarea:focus {
     outline: none;
 }
 
+.insert-project {
+  background-color: @item-background;
+  padding: 0 .5em;
+  font-size: 1.4em;
+  line-height: 1.4em;
+  width: 225px;
+  border: none;
+  flex: 10;
+} 
+
 [draggable] {
   cursor: move;
 }
 
 .sticky-buttons {
   position: fixed;
-  top: 2px;
   z-index: 200;
   padding: .3em;
   background-color: rgba(149, 165, 166,.5);
 
   &.right {
+    top: 2px;
+    right: 2px;
+  }
+
+  &.bottom-right {
+    bottom: 2px;
     right: 2px;
   }
 
   &.left {
+    top: 2px;
     left: 2px;
   }
 }
