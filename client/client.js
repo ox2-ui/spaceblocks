@@ -76,7 +76,43 @@ UI.body.events({
 //  type - 2  'publish'=  publish
 //  type - 3 'roles' = roles
 
+Template.controls.helpers({
+  activeProject: function () {
+    return Session.get('selected_project') ? Projects.findOne({'_id': Session.get('selected_project')}) : Projects.findOne({});
+  },
+  projects: function () {
+    return Projects.find({}, {sort: {createdAt: 1}})
+  },
+  noprojects: function () {
+    return Projects.find({}).count() == 0 ? true : false;
+  },
+  viewProjects: function () {
+    return Session.get('edit_projects') ? 'is-open' : '';
+  }
+})
+
 Template.controls.events({
+  'click .js-selectProject': function () {
+    Session.set('selected_project', this._id)
+    Session.set('edit_projects', false)
+  },
+  'click .js-openProjects': function () {
+    Session.set('edit_projects', true);
+  },
+  'keypress #newProjectInput': function (e) {
+    var curLenght = e.currentTarget.value.length;
+    if (e.keyCode === 13 && curLenght > 0) {
+        Projects.insert({
+          createdAt: new Date(),
+          projectname: e.currentTarget.value,
+          selected: false
+        })
+        e.currentTarget.value = "";
+    } else {
+      var key = e.keyCode || e.charCode;
+      return key !== 13;
+    }
+  },
   'click #insertCardSchema' : function (e) {
     // console.log('%c e click   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
      Cards.insert({

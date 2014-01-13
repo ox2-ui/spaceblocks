@@ -3,7 +3,6 @@ Meteor.publish("projects", function () {
  });
 
 Meteor.publish("cards", function (projectId) {
-  console.log(projectId)
    return Cards.find({projectId: projectId});
  });
 

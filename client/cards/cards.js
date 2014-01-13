@@ -14,7 +14,7 @@ Template.cardsI.helpers({
     var blocks = Blocks.find({'cardId': this._id}, {sort: {createdAt: 1}}).fetch();
     var newBlocks = blocks.map(function(block) {
       if (parentId != block.creatorId)
-        block.mirror = true;
+        block.mirror = parentId;
       return block;
       });
     return newBlocks

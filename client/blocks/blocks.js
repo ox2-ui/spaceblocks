@@ -11,6 +11,9 @@ Template.blocksI.helpers({
 });
 
 Template.blocksI.events({
+  'click .js-removeMirror': function () {
+    Blocks.update({'_id': this._id}, {$pull: {cardId: this.mirror}})
+  },
   'click .js-selectBlock': function () {
     Session.set("selected_block", [this._id])
   },

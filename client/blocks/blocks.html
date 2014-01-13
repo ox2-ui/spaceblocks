@@ -12,8 +12,11 @@
             <button class="btn btn-default js-addBlockTo sparkicon sparkicon-plus"></button>
           {{/if}} -->
           <button class="btn btn-default sparkicon sparkicon-pencil js-editBlock"></button> 
-          <button class="btn btn-default js-removeBlockType sparkicon sparkicon-trash"></button>
-          <button class="btn btn-default js-removeBlockType sparkicon sparkicon-unlink-board2"></button>
+          {{#if this.mirror}}
+            <button class="btn btn-default js-removeMirror sparkicon sparkicon-unlink-board2"></button>
+          {{else}}
+            <button class="btn btn-default js-removeBlockType sparkicon sparkicon-trash"></button>
+          {{/if}}
           <button class="btn btn-default js-addComment sparkicon-chat-bubbles"></button>
         {{/if}}
       </div>
