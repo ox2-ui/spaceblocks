@@ -1,5 +1,12 @@
 Template.cards.rendered = function () {
   dragndrop();
+  $('.cards').panzoom({
+    $zoomIn: $(".zoom-in"),
+    $zoomOut: $(".zoom-out"),
+    $zoomRange: $(".zoom-range"),
+    $reset: $(".reset")
+  });
+  $('.cards').panzoom("disable");
 }
 
 Template.cards.helpers({

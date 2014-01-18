@@ -1,7 +1,6 @@
 <head>
   <title>spaceblocks</title>
-  <meta name="viewport" content="width=1200">
-  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width,  initial-scale=1, minimum-scale=1, user-scalable=no">
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic|Roboto+Condensed:300italic,400italic,700italic,400,300,700' rel='stylesheet' type='text/css'>
 
   <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro' rel='stylesheet' type='text/css'>
@@ -46,6 +45,19 @@
   <div class="sticky-buttons bottom-right">
       <button type="button" id="deleteRecords" class="btn btn-danger btn-xs pull-right">Flush Data</button>
   </div> 
+
+  <div class="sticky-buttons bottom-left">
+    <div class="buttons">
+      <button class="btn btn-info js-enable-zoom">Enable</button>
+      <button class="btn btn-warning js-disable-zoom">Disable</button>
+      <button class="zoom-in">Zoom In</button>
+      <button class="zoom-out">Zoom Out</button>
+      <input type="range" class="zoom-range">
+      <button class="reset">Reset</button>
+    </div>
+  </div> 
+
+
 </template>
 
 

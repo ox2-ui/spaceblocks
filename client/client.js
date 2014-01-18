@@ -91,6 +91,8 @@ Template.controls.helpers({
   }
 })
 
+
+
 Template.controls.events({
   'click .js-selectProject': function () {
     Session.set('selected_project', this._id)
@@ -98,6 +100,12 @@ Template.controls.events({
   },
   'click .js-openProjects': function () {
     Session.equals('edit_projects', true) ? Session.set('edit_projects', false) : Session.set('edit_projects', true);
+  },
+  'click .js-enable-zoom': function () {
+    $('.cards').panzoom("enable");
+  },
+  'click .js-disable-zoom': function () {
+    $('.cards').panzoom("disable");
   },
   'keypress #newProjectInput': function (e) {
     var curLenght = e.currentTarget.value.length;

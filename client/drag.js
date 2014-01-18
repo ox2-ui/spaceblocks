@@ -11,8 +11,6 @@ dragndrop = function() {
   }
 
   function moveStart(e) {
-    // console.log('%c dragstart evt  ',  'background: #5D76DB; color: white; padding: 1px 15px 1px 5px;');
-    // console.log('%c e start   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', e);
     whichArt = e.target;
     myX = e.offsetX === undefined ? e.layerX : e.offsetX;
     myY = e.offsetY === undefined ? e.layerY : e.offsetY;
@@ -21,13 +19,10 @@ dragndrop = function() {
   }
 
   function moveDragOver(e) {
-    // console.log('%c over  evt ',  'background: #5D76DB; color: white; padding: 1px 15px 1px 5px;');
     e.preventDefault();
   }
 
   function moveDrop(e) {
-    // console.log('%c drop evt  ',  'background: #5D76DB; color: white; padding: 1px 15px 1px 5px;');
-    // console.log('%c e drop   ',  'background: #FF9900; color: white; padding: 1px 15px 1px 5px;', this);
     e.preventDefault();
     var dropX = e.pageX - myX + 'px';
     var dropY = e.pageY - myY + 'px';
