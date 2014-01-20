@@ -17,14 +17,15 @@
           {{else}}
             <button class="btn btn-default js-removeBlockType sparkicon sparkicon-trash"></button>
           {{/if}}
-          <button class="btn btn-default js-addComment sparkicon-chat-bubbles"></button>
+          <button class="btn btn-default js-newComment sparkicon-chat-bubbles"></button>
         {{/if}}
       </div>
       {{#if selected}}
+          {{#if addComment}}
+            {{> commentsIS}}
+          {{/if}} 
          {{#each blockComments comments}}
            {{> commentsI}}
-        {{else}} 
-           {{> commentsIS}}
         {{/each}} 
       {{/if}}
     {{/blockType}}

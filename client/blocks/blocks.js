@@ -11,10 +11,19 @@ Template.blocksI.helpers({
   blockComments: function (comments) { 
     console.log(comments)
     return Comments.find({'_id': {$in :comments}}).fetch();
+  },
+  addComment: function () {
+    return Session.equals('edit_comment', this._id) ? true : false;
   }
 });
 
 Template.blocksI.events({
+  'click .js-newComment': function () {
+    if (Session.equals('edit_comment', this._id))
+      Session.set('edit_comment', '')
+    else
+      Session.set('edit_comment', this._id)
+  },
   'click .js-removeMirror': function () {
     Blocks.update({'_id': this._id}, {$pull: {cardId: this.mirror}})
   },

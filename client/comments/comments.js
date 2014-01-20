@@ -2,7 +2,7 @@ Template.commentsI.events({
   'click .js-removeComment': function () {
     Blocks.update({'_id': this.blocksId}, {$pull: {comments : this._id}});
     Comments.remove({'_id': this._id})
-    
+     Session.set('edit_comment','')
   }
 })
 
@@ -18,5 +18,6 @@ Template.commentsIS.events({
       content: el.value
     });
     Blocks.update({'_id': this._id}, {$addToSet: {comments : newComment}})
+     Session.set('edit_comment', '')
   }
 })
