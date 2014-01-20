@@ -7,9 +7,14 @@
 </head>
 
 <body>
+{{#if currentUser}}
   {{> controls}}
   {{> cards}}
+{{/if}}
   {{! > images}}
+{{#unless currentUser}}  
+  {{> loginButtons}}
+{{/unless}}
 </body>
 
 <template name="controls">

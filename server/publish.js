@@ -1,3 +1,19 @@
+ Accounts.config({
+   forbidClientAccountCreation : true
+ });
+
+  if(!Meteor.users.findOne({username: 'superadmin'})) {
+  var options = {
+    username: 'superadmin',
+    password: '`q1w2e3r4t5',
+    email: 'q@q.q',
+  };
+  console.log(options);
+  Accounts.createUser(options);
+}
+
+
+
 Meteor.publish("projects", function () {
    return Projects.find({});
  });

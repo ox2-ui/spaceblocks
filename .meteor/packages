@@ -9,3 +9,6 @@ preserve-inputs
 jquery
 less-ap-dev
 marked
+accounts-password
+accounts-base
+accounts-ui
