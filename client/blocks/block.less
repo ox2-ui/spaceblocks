@@ -110,3 +110,31 @@
   }
 
 }
+
+
+.comments {
+  display: flex;
+
+  .button-remove {
+    flex: 1;
+    max-height: 30px;
+    margin-top: .4em;
+  }
+
+  .comment-input {
+    flex: 10;
+    margin: .4em .5em .7em;
+  }
+  
+  .content {
+    flex: 10;
+    padding: .8em;
+    margin: .4em .5em .7em;
+    max-width: 300px;
+    color: @dark-heading;
+    background-color: darken(@item-background, 10%);
+    background-color: @background;
+    background-color: lighten(@background, 3%);
+    border-radius: 5px;
+  }
+}
