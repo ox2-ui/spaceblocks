@@ -7,6 +7,10 @@ Template.blocksI.helpers({
   },
   selected: function () {
     return _.contains(Session.get("selected_block"), this._id) ? "selected" : '';
+  },
+  blockComments: function (comments) { 
+    console.log(comments)
+    return Comments.find({'_id': {$in :comments}}).fetch();
   }
 });
 
@@ -35,15 +39,7 @@ Template.blocksI.events({
       Blocks.update({'_id': Session.get('selected_block')[0]}, {$pull: {connections : this._id}});
     }
   },
-  'click .js-addComment': function () {
-    var newComment = Comments.insert({
-      createdAt: new Date(),
-      cardId: Session.get("selected_card"),
-      projectId: Session.get('selected_project'),
-      content: ''
-    });
-    Blocks.update({'_id': this._id}, {$addToSet: {comments : newComment}})
-  },
+
   'click .js-editBlock': function () {
     Session.set('edit_block', this._id);
     var selector = ".focus-" + this._id;

@@ -1,0 +1,13 @@
+<template name="commentsI">
+    <div class="comments">
+      <button class="btn btn-default sparkicon sparkicon-trash button-remove js-removeComment"></button>
+      <div class="content">{{content}}</div>
+    </div>
+</template>
+
+<template name="commentsIS">
+    <div class="comments">
+      <button class="btn btn-default sparkicon sparkicon-pencil button-remove js-addComment"></button>
+  <textarea class="form-control  focus-{{_id}} comment-input" rows="3">{{content}}</textarea>
+    </div>
+</template>

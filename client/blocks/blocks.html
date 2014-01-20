@@ -20,6 +20,13 @@
           <button class="btn btn-default js-addComment sparkicon-chat-bubbles"></button>
         {{/if}}
       </div>
+      {{#if selected}}
+         {{#each blockComments comments}}
+           {{> commentsI}}
+        {{else}} 
+           {{> commentsIS}}
+        {{/each}} 
+      {{/if}}
     {{/blockType}}
   </div>
 </template>
@@ -35,22 +42,16 @@
           <button class="addon-button js-addBlockTo sparkicon sparkicon-plus"></button>
         {{/if}}
         <div class="item-wrapper {{selected}}">
-{{#if this.mirror}}
-          <div class="addon {{icon}}">
-            <span class="icon {{icon}}"></span>
-          </div>
-    {{/if}}
+          {{#if this.mirror}}
+            <div class="addon {{icon}}">
+              <span class="icon {{icon}}"></span>
+            </div>
+          {{/if}}
           <h4 class="content {{linked}} js-selectBlock">{{content}}</h4>
         </div>
       {{/if}}
   </div>
   {{> content}}
-  <div class="comments">
-    <button class="btn btn-default sparkicon sparkicon-trash button-remove"></button>
-<!--     <div class="content">Some content Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, doloremque.</div> -->
-<textarea class="form-control  focus-{{_id}} comment-input" rows="3">{{content}}</textarea>
-  </div>
-  
 </template>
 
 <template name="_blocksType2">
@@ -64,14 +65,15 @@
         <button class="addon-button js-addBlockTo sparkicon sparkicon-plus"></button>
       {{/if}}
       <div class="item-wrapper {{selected}}">
-      {{#if this.mirror}}
-        <div class="addon {{icon}}">
-          <span class="icon {{icon}}"></span>
-        </div>
-      {{/if}}
+          {{#if this.mirror}}
+              <div class="addon {{icon}}">
+                <span class="icon {{icon}}"></span>
+              </div>
+          {{/if}}
         <div class="content {{linked}} {{selected}}">{{{mdConvert  content}}}</div>
       </div>
     {{/if}}
   </div>
   {{> content}}
+   
 </template>
